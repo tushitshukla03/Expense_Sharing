@@ -1,13 +1,12 @@
 import sys
 import subprocess
-import random
+
 
 
 def in_venv():
     return sys.prefix != sys.base_prefix
 
 
-# Copy content from .env.template to .env
 try:
     # Check for venv
     if in_venv():

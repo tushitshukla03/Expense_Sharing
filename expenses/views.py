@@ -185,7 +185,6 @@ class ExpenseCreateView(generics.CreateAPIView):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             try:
-                # Start transaction
                 with transaction.atomic():
                     expense = serializer.save()
                     logger.info(f"Expense created with ID: {expense.id}")
